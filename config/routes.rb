@@ -14,6 +14,8 @@ Rails.application.routes.draw do
 
   # TaskList Routes
   resources :tasklists
+  post '/tasklists/:id/edit' => 'tasklists#update'
+  post '/tasklist/:id' => 'tasklists#upate'
 
   # Task routes
   resources :tasks

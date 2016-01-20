@@ -7,6 +7,8 @@
       <h3><%= list.title %></h3>
       <p><%= list.description %></p>
       <p><%= list.created_at %></p>
+      <%= link_to 'Edit Tasklist', edit_tasklist_path(list.id) %>
+      <%= link_to 'Delete Tasklist', list, method: :delete %>
       <%= link_to 'Current Tasks', '/tasks' %>
     <% end %>
   <% end %>
