@@ -1,13 +1,16 @@
 class TasklistsController < ApplicationController
   before_filter :authorize
 
+  def index
+    @tasklists = Tasklist.all
+  end
+
   def new
 
   end
 
   def create
     @tasklist = Tasklist.new(tasklist_params)
-
     @tasklist.user_id = current_user.id
 
 
@@ -20,6 +23,7 @@ class TasklistsController < ApplicationController
 
   def show
     @tasklist = Tasklist.find(params[:id])
+    Tasklist.find_by(user_id: current_user.id)
   end
 
   private

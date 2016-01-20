@@ -1,0 +1,7 @@
+<%= link_to 'Home', '/' %>
+<%= link_to 'Task Lists', '/tasklists' %>
+
+
+<% @tasks.each do |task| %>
+  <h3><%= task.title %></h3>
+<% end %>

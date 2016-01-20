@@ -1,0 +1,9 @@
+<h3>New Task</h3>
+<%= form_for :task, url: '/tasks' do |f| %>
+  Title: <%= f.text_field :title %>
+  Status<%= f.text_field :status %><br>
+  Start Date<%= f.date_select :start_date %><br>
+  Due Date<%= f.date_select :due_date %>><br>
+  Notes<%= f.text_area :notes %><br>
+  <%= f.submit %>
+<% end %>
