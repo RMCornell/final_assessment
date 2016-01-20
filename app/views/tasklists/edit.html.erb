@@ -1,5 +1,5 @@
 <h3>Edit Task List</h3>
-<%= form_for :tasklist, url: '/tasklists', action: "PUT" do |f| %>
+<%= form_for(@tasklist, html: { multipart: true }) do |f| %>
   <%= f.text_field :title %>
   <%= f.text_field :description %>
   <%= f.submit %>
