@@ -22,7 +22,7 @@ class TasksController < ApplicationController
 
   def show
     @task = Task.find(params[:id])
-    @tasks = Task.all
+    @tasklists = Tasklist.all
   end
 
   def update
