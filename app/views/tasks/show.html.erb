@@ -1,12 +1,9 @@
 <br><%= link_to 'New Task', '/tasks/new' %><br>
 <% @tasklists.each do |tasklist| %>
   <% if @task.tasklist_id == tasklist.id %>
-        <%= link_to 'Return to Tasklist', tasklist_path(tasklist) %>
+        <%= link_to 'Return to ' + tasklist.title, tasklist_path(tasklist) %>
   <% end %>
 <% end %>
-
-
-
 
 <h3><%= @task.title %></h3>
 <h6>Completed: <%= check_box_tag @task.status %></h6>
