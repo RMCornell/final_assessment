@@ -1,10 +1,15 @@
 class TasklistsController < ApplicationController
+  before_filter :authorize
+
   def new
 
   end
 
   def create
     @tasklist = Tasklist.new(tasklist_params)
+
+    @tasklist.user_id = current_user.id
+
 
     if @tasklist.save
       redirect_to @tasklist
