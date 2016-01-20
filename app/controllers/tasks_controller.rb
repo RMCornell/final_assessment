@@ -3,7 +3,6 @@ class TasksController < ApplicationController
 
   def index
     @tasks = Task.all
-    @task = Task.new(:tasklist_id => current_user.tasklists.first.id)
   end
 
   def new
