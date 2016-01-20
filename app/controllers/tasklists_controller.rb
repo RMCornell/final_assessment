@@ -1,6 +1,10 @@
 class TasklistsController < ApplicationController
   before_filter :authorize
 
+  def index
+    @tasklists = Tasklist.all
+  end
+
   def new
 
   end

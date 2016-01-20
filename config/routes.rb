@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   # TaskList Routes
   resources :tasklists
 
+  # Task routes
+  resources :tasks
 
 
 

@@ -1,0 +1,8 @@
+<%= link_to 'Home', '/' %>
+
+
+<% @tasklists.each do |list| %>
+  <h3><%= list.title %></h3>
+  <p><%= list.description %></p>
+  <p><%= list.created_at %></p>
+<% end %>
