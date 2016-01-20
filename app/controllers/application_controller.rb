@@ -8,6 +8,11 @@ class ApplicationController < ActionController::Base
   end
   helper_method :current_user
 
+  def current_tasklist
+    Tasklist.find_by(user_id: current_user.id)
+  end
+  helper_method :current_tasklist
+
   def authorize
     redirect_to '/login' unless current_user
   end

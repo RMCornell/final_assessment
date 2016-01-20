@@ -12,6 +12,9 @@ class TasksController < ApplicationController
   def create
     @task = Task.new(task_params)
 
+    @task.tasklist_id = current_tasklist.id
+
+
     if @task.save
       redirect_to @task
     end

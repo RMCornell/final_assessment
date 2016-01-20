@@ -11,7 +11,6 @@ class TasklistsController < ApplicationController
 
   def create
     @tasklist = Tasklist.new(tasklist_params)
-
     @tasklist.user_id = current_user.id
 
 
@@ -24,6 +23,7 @@ class TasklistsController < ApplicationController
 
   def show
     @tasklist = Tasklist.find(params[:id])
+    Tasklist.find_by(user_id: current_user.id)
   end
 
   private

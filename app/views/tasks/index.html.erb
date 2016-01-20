@@ -2,4 +2,6 @@
 <%= link_to 'Task Lists', '/tasklists' %>
 
 
-<h3><%= @tasks %></h3>
+<% @tasks.each do |task| %>
+  <h3><%= task.title %></h3>
+<% end %>
