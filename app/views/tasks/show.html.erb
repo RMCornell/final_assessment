@@ -1,8 +1,7 @@
-<%= link_to 'Task Lists', '/tasks' %>
-
+<br><%= link_to 'Back to tasks', '/tasks' %>
 
 <h3><%= @task.title %></h3>
-<h6>Completed: <%= check_box_tag "complete", @task.status, :false %></h6>
+<h6>Completed: <%= check_box_tag @task.status, 'status', true, class: "checkbox" %></h6>
 <h6><%= @task.due_date %></h6>
 <h6><%= @task.start_date %></h6>
 <h6><%= @task.notes %></h6>
