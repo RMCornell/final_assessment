@@ -3,5 +3,6 @@
 <% if current_user %>
  <%= link_to 'New Task List', '/tasklists/new' %><br>
  <%= link_to 'Current Task Lists', '/tasklists' %>
-
+  <% else %>
+  <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %> | <%= link_to 'Home', '/' %>
 <% end %>

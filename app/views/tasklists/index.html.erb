@@ -1,16 +1,16 @@
-
-
 <% if current_user %>
-
+<ul>
   <% @tasklists.each do |list| %>
     <% if list.user_id == current_user.id %>
-      <h3><%=link_to list.title, tasklist_path(list) %></h3>
-      <p><%= list.description %></p>
-      <p><%= list.created_at %></p>
+      <li>
+        <h3><%=link_to list.title, tasklist_path(list) %></h3>
+        <p><%= list.description %></p>
+        <p><%= list.created_at %></p>
 
-      <%= link_to 'View Tasks', '/tasks' %><br>
-      <%= link_to 'Edit Tasklist', edit_tasklist_path(list) %><br>
-      <%= link_to 'Delete Tasklist', list, method: :delete %><br>
+        <%= link_to 'Edit Tasklist', edit_tasklist_path(list) %><br>
+        <%= link_to 'Delete Tasklist', list, method: :delete %><br>
+      </li>
     <% end %>
   <% end %>
+</ul>
 <% end %>
