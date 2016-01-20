@@ -4,11 +4,11 @@
 
   <% @tasklists.each do |list| %>
     <% if list.user_id == current_user.id %>
-      <h3><%= list.title %></h3>
+      <h3><%= link_to list.title, tasklist_path(list) %></h3>
       <p><%= list.description %></p>
       <p><%= list.created_at %></p>
-      <%= link_to 'Edit Tasklist', edit_tasklist_path(list) %>
-      <%= link_to 'Delete Tasklist', list, method: :delete %>
+      <%= link_to 'Edit Tasklist', edit_tasklist_path(list) %><br>
+      <%= link_to 'Delete Tasklist', list, method: :delete %><br>
       <%= link_to 'Current Tasks', '/tasks' %>
     <% end %>
   <% end %>
