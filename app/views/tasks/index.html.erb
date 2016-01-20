@@ -1,7 +1,10 @@
-<%= link_to 'Home', '/' %>
-<%= link_to 'Task Lists', '/tasklists' %>
-
-
+<br><%= link_to 'Back to Tasklist', '/tasklists' %>
 <% @tasks.each do |task| %>
-  <h3><%= task.title %></h3>
+  <% if task.tasklist_id == current_user.tasklists.first.id %>
+    <h3><%= link_to task.title, task_path(task.id) %></h3>
+  <% end %>
 <% end %>
+
+<%= link_to 'New Task', '/tasks/new' %>
+
+

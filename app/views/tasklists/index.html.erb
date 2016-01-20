@@ -1,12 +1,13 @@
-<%= link_to 'Home', '/' %><br><br>
+<br><%= link_to 'New Tasklist', '/tasklists/new' %>
 
-<%= link_to 'New Tasklist', '/tasklists/new' %>
+<% if current_user %>
 
-<% if current_tasklist %>
   <% @tasklists.each do |list| %>
-    <h3><%= list.title %></h3>
-    <p><%= list.description %></p>
-    <p><%= list.created_at %></p>
-    <%= link_to 'Current Tasks', '/tasks' %>
+    <% if list.user_id == current_user.id %>
+      <h3><%= list.title %></h3>
+      <p><%= list.description %></p>
+      <p><%= list.created_at %></p>
+      <%= link_to 'Current Tasks', '/tasks' %>
+    <% end %>
   <% end %>
 <% end %>
