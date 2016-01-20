@@ -9,7 +9,7 @@
 <body>
 
 <% if current_user %>
-  Signed in as <%= current_user.email %> | <%= link_to "Logout", '/logout' %> | <%= link_to 'Home', '/' %>
+  Signed in as <%= current_user.email %> | <%= link_to 'New Tasklist', '/tasklists/new' %> | <%= link_to "Logout", '/logout' %> | <%= link_to 'Home', '/' %>
 <% else %>
   <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %> | <%= link_to 'Home', '/' %>
 <% end %>

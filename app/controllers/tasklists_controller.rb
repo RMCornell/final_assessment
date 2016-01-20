@@ -13,7 +13,6 @@ class TasklistsController < ApplicationController
     @tasklist = Tasklist.new(tasklist_params)
     @tasklist.user_id = current_user.id
 
-
     if @tasklist.save
       redirect_to @tasklist
     else
@@ -23,7 +22,25 @@ class TasklistsController < ApplicationController
 
   def show
     @tasklist = Tasklist.find(params[:id])
-    Tasklist.find_by(user_id: current_user.id)
+    @tasks = Task.all
+  end
+
+  def edit
+    @tasklist = Tasklist.find(params[:id])
+  end
+
+  def update
+    @tasklist = Tasklist.find(params[:id])
+    @tasklist.update(tasklist_params)
+
+    redirect_to tasklist_path(@tasklist)
+  end
+
+  def destroy
+
+    @tasklist = Tasklist.destroy(params[:id])
+
+    redirect_to tasklists_path
   end
 
   private

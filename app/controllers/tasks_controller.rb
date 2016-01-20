@@ -22,6 +22,15 @@ class TasksController < ApplicationController
 
   def show
     @task = Task.find(params[:id])
+    @tasks = Task.all
+  end
+
+  def update
+    @task = Task.find(params[:id])
+
+    if @task.update_attributes(:status => params[:complete])
+      redirect_to tasks_path
+    end
   end
 
   private

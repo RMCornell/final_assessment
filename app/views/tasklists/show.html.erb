@@ -1,6 +1,11 @@
-<%= link_to 'Home', '/' %><br><br>
-
 <h3><%= @tasklist.title %></h3>
 <h6><%= @tasklist.description %></h6>
 
-<%= link_to 'New Task', '/tasks/new' %>
+<% @tasks.each do |task| %>
+  <% if task.tasklist_id == @tasklist.id %>
+    <h4><%= link_to task.title, task_path(task) %></h4>
+  <% end %>
+<% end %>
+
+<%= link_to 'New Task', '/tasks/new' %><br>
+<%= link_to 'Back to Tasklists', '/tasklists' %>
